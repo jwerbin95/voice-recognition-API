@@ -9,7 +9,10 @@ const PORT = 3000
 
 mongoose.connect('mongodb://localhost:27017/audio-visualiser', {useNewUrlParser: true})
 
-app.use(cors())
+app.use(cors({
+	origin: "http://localhost:3001",
+	optionSuccessStatus: 200
+}))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
